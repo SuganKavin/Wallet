@@ -1,0 +1,894 @@
+{
+  "version": "1.21.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "my-wallet": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "my-wallet.template.json"
+      },
+      "metadata": {
+        "/my-wallet": [
+          {
+            "type": "aws:cdk:asset",
+            "data": {
+              "path": "asset.8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f",
+              "id": "8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f",
+              "packaging": "zip",
+              "sourceHash": "8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f",
+              "s3BucketParameter": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3BucketFDDD5190",
+              "s3KeyParameter": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1",
+              "artifactHashParameter": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fArtifactHash6360666E"
+            },
+            "trace": [
+              "ConstructNode.addMetadata (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:291:62)",
+              "Stack.addFileAsset (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\core\\lib\\stack.js:370:23)",
+              "new Asset (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:68:33)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletDetail": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": "WalletDetail",
+            "trace": [
+              "ConstructNode.addMetadata (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:291:62)",
+              "new Table (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:240:23)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletDetail/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletDetail49B35DC5",
+            "trace": [
+              "new Table (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:222:22)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/TransactionDetail": [
+          {
+            "type": "aws:cdk:hasPhysicalName",
+            "data": "TransactionDetail",
+            "trace": [
+              "ConstructNode.addMetadata (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\core\\lib\\construct-compat.js:291:62)",
+              "new Table (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:240:23)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/TransactionDetail/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsTransactionDetail53E38EC2",
+            "trace": [
+              "new Table (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:222:22)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletCreateHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletCreateHandlerServiceRoleDAB8E3F8",
+            "trace": [
+              "new Role (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:60:35)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletCreateHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletCreateHandlerServiceRoleDefaultPolicy0BA5BE57",
+            "trace": [
+              "new Policy (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:160:34)",
+              "Function.addToPrincipal (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Table.grant (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
+              "Table.grantReadWriteData (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletCreateHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletCreateHandler05CD2900",
+            "trace": [
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:71:26)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/TrxCreateHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsTrxCreateHandlerServiceRole8B2178D9",
+            "trace": [
+              "new Role (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:60:35)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/TrxCreateHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsTrxCreateHandlerServiceRoleDefaultPolicy1BDB255F",
+            "trace": [
+              "new Policy (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:160:34)",
+              "Function.addToPrincipal (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Table.grant (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
+              "Table.grantReadWriteData (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:119:61)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/TrxCreateHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsTrxCreateHandler5E56B295",
+            "trace": [
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:71:26)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletGetHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletGetHandlerServiceRole0696B6D6",
+            "trace": [
+              "new Role (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:60:35)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletGetHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletGetHandlerServiceRoleDefaultPolicy35B1E957",
+            "trace": [
+              "new Policy (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:160:34)",
+              "Function.addToPrincipal (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Table.grant (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
+              "Table.grantReadData (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:75:21)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletGetHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletGetHandler196D89A7",
+            "trace": [
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:71:26)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletUpdateHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletUpdateHandlerServiceRoleC563B08D",
+            "trace": [
+              "new Role (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:60:35)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletUpdateHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletUpdateHandlerServiceRoleDefaultPolicy4E4AEBCF",
+            "trace": [
+              "new Policy (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:160:34)",
+              "Function.addToPrincipal (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Table.grant (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
+              "Table.grantWriteData (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:110:21)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletUpdateHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletUpdateHandlerEE9E7AE3",
+            "trace": [
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:71:26)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletDeleteHandler/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletDeleteHandlerServiceRole93F27488",
+            "trace": [
+              "new Role (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:60:35)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletDeleteHandler/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletDeleteHandlerServiceRoleDefaultPolicy4B9E2AC6",
+            "trace": [
+              "new Policy (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\policy.js:30:26)",
+              "Role.addToPolicy (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:160:34)",
+              "Function.addToPrincipal (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\grant.js:57:65)",
+              "Table.grant (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:42:26)",
+              "Table.grantWriteData (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-dynamodb\\lib\\table.js:110:21)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/WalletDeleteHandler/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletDeleteHandler71F9F151",
+            "trace": [
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:71:26)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapi9B0A44F0",
+            "trace": [
+              "new RestApi (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:31:26)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiDeployment5C6C0D13129cd5b824a3c27aa8a6412b959e9756",
+            "trace": [
+              "new Deployment (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\deployment.js:40:25)",
+              "RestApi.configureDeployment (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:187:38)",
+              "new RestApi (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:45:14)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiDeploymentStageprodF0E10B5B",
+            "trace": [
+              "new Stage (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\stage.js:27:26)",
+              "RestApi.configureDeployment (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:195:36)",
+              "new RestApi (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:45:14)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiEndpoint07DF842B",
+            "trace": [
+              "RestApi.configureDeployment (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:199:13)",
+              "new RestApi (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:45:14)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiCloudWatchRole04F625A5",
+            "trace": [
+              "new Role (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-iam\\lib\\role.js:41:22)",
+              "RestApi.configureCloudWatchRole (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:208:22)",
+              "new RestApi (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:48:18)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiAccountB7B5610C",
+            "trace": [
+              "RestApi.configureCloudWatchRole (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:212:26)",
+              "new RestApi (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\restapi.js:48:18)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/POST/ApiPermission.mywalletWalletsWalletapi7B2B67C5.POST..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiPOSTApiPermissionmywalletWalletsWalletapi7B2B67C5POSTBDC9CD82",
+            "trace": [
+              "Function.addPermission (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:22:9)",
+              "LambdaIntegration.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
+              "Method.renderIntegration (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "RootResource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/POST/ApiPermission.Test.mywalletWalletsWalletapi7B2B67C5.POST..": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiPOSTApiPermissionTestmywalletWalletsWalletapi7B2B67C5POSTCBFEDA00",
+            "trace": [
+              "Function.addPermission (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:22:9)",
+              "LambdaIntegration.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
+              "Method.renderIntegration (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "RootResource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/POST/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiPOST3A564174",
+            "trace": [
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "RootResource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/{id}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiid9AC81475",
+            "trace": [
+              "new Resource (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:170:26)",
+              "RootResource.addResource (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:14:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/{id}/PUT/ApiPermission.mywalletWalletsWalletapi7B2B67C5.PUT..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiidPUTApiPermissionmywalletWalletsWalletapi7B2B67C5PUTid3166B0DA",
+            "trace": [
+              "Function.addPermission (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:22:9)",
+              "LambdaIntegration.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
+              "Method.renderIntegration (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/{id}/PUT/ApiPermission.Test.mywalletWalletsWalletapi7B2B67C5.PUT..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiidPUTApiPermissionTestmywalletWalletsWalletapi7B2B67C5PUTidA18D5ED4",
+            "trace": [
+              "Function.addPermission (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:22:9)",
+              "LambdaIntegration.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
+              "Method.renderIntegration (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/{id}/PUT/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiidPUTBEC9CD7C",
+            "trace": [
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "Resource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/{id}/GET/ApiPermission.mywalletWalletsWalletapi7B2B67C5.GET..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiidGETApiPermissionmywalletWalletsWalletapi7B2B67C5GETidD27DDA5E",
+            "trace": [
+              "Function.addPermission (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:22:9)",
+              "LambdaIntegration.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
+              "Method.renderIntegration (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/{id}/GET/ApiPermission.Test.mywalletWalletsWalletapi7B2B67C5.GET..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiidGETApiPermissionTestmywalletWalletsWalletapi7B2B67C5GETidB4B4B5D0",
+            "trace": [
+              "Function.addPermission (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:22:9)",
+              "LambdaIntegration.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
+              "Method.renderIntegration (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/{id}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiidGET2E670260",
+            "trace": [
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "Resource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/{id}/DELETE/ApiPermission.mywalletWalletsWalletapi7B2B67C5.DELETE..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiidDELETEApiPermissionmywalletWalletsWalletapi7B2B67C5DELETEid96940476",
+            "trace": [
+              "Function.addPermission (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:22:9)",
+              "LambdaIntegration.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:31:22)",
+              "Method.renderIntegration (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/{id}/DELETE/ApiPermission.Test.mywalletWalletsWalletapi7B2B67C5.DELETE..{id}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiidDELETEApiPermissionTestmywalletWalletsWalletapi7B2B67C5DELETEidFA37B4E6",
+            "trace": [
+              "Function.addPermission (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function-base.js:22:9)",
+              "LambdaIntegration.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\integrations\\lambda.js:38:26)",
+              "Method.renderIntegration (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:89:21)",
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:40:31)",
+              "Resource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/Wallets/Wallet-api/Default/{id}/DELETE/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "WalletsWalletapiidDELETE91301A3B",
+            "trace": [
+              "new Method (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\method.js:46:26)",
+              "Resource.addMethod (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-apigateway\\lib\\resource.js:17:16)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:51",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7663:25",
+              "Kernel._ensureSync (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8272:20)",
+              "Kernel.invoke (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7662:26)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/AssetParameters/8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f/S3Bucket": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3BucketFDDD5190",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:11:36)",
+              "Stack.addFileAsset (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
+              "new Asset (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:68:33)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/AssetParameters/8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f/S3VersionKey": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:15:35)",
+              "Stack.addFileAsset (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
+              "new Asset (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:68:33)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ],
+        "/my-wallet/AssetParameters/8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f/ArtifactHash": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fArtifactHash6360666E",
+            "trace": [
+              "new FileAssetParameters (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\core\\lib\\private\\asset-parameters.js:19:38)",
+              "Stack.addFileAsset (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\core\\lib\\stack.js:360:22)",
+              "new Asset (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-s3-assets\\lib\\asset.js:30:32)",
+              "AssetCode.bind (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\code.js:135:26)",
+              "new Function (C:\\Users\\bk449d\\AppData\\Local\\Temp\\jsii-kernel-xYYs5z\\node_modules\\@aws-cdk\\aws-lambda\\lib\\function.js:68:33)",
+              "C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:49",
+              "Kernel._wrapSandboxCode (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:8296:20)",
+              "Kernel._create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7836:26)",
+              "Kernel.create (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7583:21)",
+              "KernelHost.processRequest (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7371:28)",
+              "KernelHost.run (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7311:14)",
+              "Immediate._onImmediate (C:\\Users\\bk449d\\AppData\\Local\\Programs\\Python\\Python38\\lib\\site-packages\\jsii\\_embedded\\jsii\\jsii-runtime.js:7314:37)",
+              "processImmediate (internal/timers.js:456:21)"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "runtime": {
+    "libraries": {
+      "@aws-cdk/cx-api": "1.31.0",
+      "@aws-cdk/core": "1.31.0",
+      "@aws-cdk/region-info": "1.31.0",
+      "@aws-cdk/aws-iam": "1.31.0",
+      "@aws-cdk/aws-cloudwatch": "1.31.0",
+      "@aws-cdk/aws-logs": "1.31.0",
+      "@aws-cdk/aws-events": "1.31.0",
+      "@aws-cdk/aws-kms": "1.31.0",
+      "@aws-cdk/aws-s3": "1.31.0",
+      "@aws-cdk/aws-ssm": "1.31.0",
+      "@aws-cdk/aws-ec2": "1.31.0",
+      "@aws-cdk/assets": "1.31.0",
+      "@aws-cdk/aws-s3-assets": "1.31.0",
+      "@aws-cdk/aws-sqs": "1.31.0",
+      "@aws-cdk/aws-lambda": "1.31.0",
+      "@aws-cdk/aws-sns": "1.31.0",
+      "@aws-cdk/aws-cloudformation": "1.31.0",
+      "@aws-cdk/aws-route53": "1.31.0",
+      "@aws-cdk/aws-certificatemanager": "1.31.0",
+      "@aws-cdk/aws-elasticloadbalancingv2": "1.31.0",
+      "@aws-cdk/aws-apigateway": "1.31.0",
+      "@aws-cdk/aws-autoscaling-common": "1.31.0",
+      "@aws-cdk/aws-applicationautoscaling": "1.31.0",
+      "@aws-cdk/aws-stepfunctions": "1.31.0",
+      "@aws-cdk/aws-ecr": "1.31.0",
+      "@aws-cdk/aws-elasticloadbalancing": "1.31.0",
+      "@aws-cdk/aws-autoscaling": "1.31.0",
+      "@aws-cdk/aws-sns-subscriptions": "1.31.0",
+      "@aws-cdk/aws-autoscaling-hooktargets": "1.31.0",
+      "@aws-cdk/aws-ecr-assets": "1.31.0",
+      "@aws-cdk/aws-cloudfront": "1.31.0",
+      "@aws-cdk/aws-route53-targets": "1.31.0",
+      "@aws-cdk/aws-sam": "1.31.0",
+      "@aws-cdk/aws-secretsmanager": "1.31.0",
+      "@aws-cdk/aws-servicediscovery": "1.31.0",
+      "@aws-cdk/aws-ecs": "1.31.0",
+      "@aws-cdk/aws-batch": "1.31.0",
+      "@aws-cdk/aws-glue": "1.31.0",
+      "@aws-cdk/aws-stepfunctions-tasks": "1.31.0",
+      "@aws-cdk/custom-resources": "1.31.0",
+      "@aws-cdk/aws-dynamodb": "1.31.0",
+      "jsii-runtime": "Python/3.8.0"
+    }
+  }
+}

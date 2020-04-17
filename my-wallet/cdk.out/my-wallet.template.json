@@ -1,0 +1,1484 @@
+{
+  "Resources": {
+    "WalletsWalletDetail49B35DC5": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "TableName": "WalletDetail"
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletDetail/Resource"
+      }
+    },
+    "WalletsTransactionDetail53E38EC2": {
+      "Type": "AWS::DynamoDB::Table",
+      "Properties": {
+        "KeySchema": [
+          {
+            "AttributeName": "id",
+            "KeyType": "HASH"
+          }
+        ],
+        "AttributeDefinitions": [
+          {
+            "AttributeName": "id",
+            "AttributeType": "S"
+          }
+        ],
+        "ProvisionedThroughput": {
+          "ReadCapacityUnits": 5,
+          "WriteCapacityUnits": 5
+        },
+        "TableName": "TransactionDetail"
+      },
+      "UpdateReplacePolicy": "Retain",
+      "DeletionPolicy": "Retain",
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/TransactionDetail/Resource"
+      }
+    },
+    "WalletsWalletCreateHandlerServiceRoleDAB8E3F8": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletCreateHandler/ServiceRole/Resource"
+      }
+    },
+    "WalletsWalletCreateHandlerServiceRoleDefaultPolicy0BA5BE57": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "dynamodb:BatchGetItem",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:Query",
+                "dynamodb:GetItem",
+                "dynamodb:Scan",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "WalletsWalletDetail49B35DC5",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "WalletsWalletCreateHandlerServiceRoleDefaultPolicy0BA5BE57",
+        "Roles": [
+          {
+            "Ref": "WalletsWalletCreateHandlerServiceRoleDAB8E3F8"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletCreateHandler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "WalletsWalletCreateHandler05CD2900": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3BucketFDDD5190"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "createWallet.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "WalletsWalletCreateHandlerServiceRoleDAB8E3F8",
+            "Arn"
+          ]
+        },
+        "Runtime": "python3.7",
+        "Environment": {
+          "Variables": {
+            "WALLET_TABLE": {
+              "Ref": "WalletsWalletDetail49B35DC5"
+            }
+          }
+        },
+        "FunctionName": "WalletCreate"
+      },
+      "DependsOn": [
+        "WalletsWalletCreateHandlerServiceRoleDefaultPolicy0BA5BE57",
+        "WalletsWalletCreateHandlerServiceRoleDAB8E3F8"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletCreateHandler/Resource",
+        "aws:asset:path": "asset.8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f",
+        "aws:asset:property": "Code"
+      }
+    },
+    "WalletsTrxCreateHandlerServiceRole8B2178D9": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/TrxCreateHandler/ServiceRole/Resource"
+      }
+    },
+    "WalletsTrxCreateHandlerServiceRoleDefaultPolicy1BDB255F": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "dynamodb:BatchGetItem",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:Query",
+                "dynamodb:GetItem",
+                "dynamodb:Scan",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "WalletsTransactionDetail53E38EC2",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            },
+            {
+              "Action": [
+                "dynamodb:BatchGetItem",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:Query",
+                "dynamodb:GetItem",
+                "dynamodb:Scan",
+                "dynamodb:BatchWriteItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "WalletsWalletDetail49B35DC5",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "WalletsTrxCreateHandlerServiceRoleDefaultPolicy1BDB255F",
+        "Roles": [
+          {
+            "Ref": "WalletsTrxCreateHandlerServiceRole8B2178D9"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/TrxCreateHandler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "WalletsTrxCreateHandler5E56B295": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3BucketFDDD5190"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "create.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "WalletsTrxCreateHandlerServiceRole8B2178D9",
+            "Arn"
+          ]
+        },
+        "Runtime": "python3.7",
+        "Environment": {
+          "Variables": {
+            "WALLET_TABLE": {
+              "Ref": "WalletsWalletDetail49B35DC5"
+            },
+            "TRANSACTION_TABLE": {
+              "Ref": "WalletsTransactionDetail53E38EC2"
+            }
+          }
+        },
+        "FunctionName": "TransactionCreate"
+      },
+      "DependsOn": [
+        "WalletsTrxCreateHandlerServiceRoleDefaultPolicy1BDB255F",
+        "WalletsTrxCreateHandlerServiceRole8B2178D9"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/TrxCreateHandler/Resource",
+        "aws:asset:path": "asset.8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f",
+        "aws:asset:property": "Code"
+      }
+    },
+    "WalletsWalletGetHandlerServiceRole0696B6D6": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletGetHandler/ServiceRole/Resource"
+      }
+    },
+    "WalletsWalletGetHandlerServiceRoleDefaultPolicy35B1E957": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "dynamodb:BatchGetItem",
+                "dynamodb:GetRecords",
+                "dynamodb:GetShardIterator",
+                "dynamodb:Query",
+                "dynamodb:GetItem",
+                "dynamodb:Scan"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "WalletsWalletDetail49B35DC5",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "WalletsWalletGetHandlerServiceRoleDefaultPolicy35B1E957",
+        "Roles": [
+          {
+            "Ref": "WalletsWalletGetHandlerServiceRole0696B6D6"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletGetHandler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "WalletsWalletGetHandler196D89A7": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3BucketFDDD5190"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "get.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "WalletsWalletGetHandlerServiceRole0696B6D6",
+            "Arn"
+          ]
+        },
+        "Runtime": "python3.7",
+        "Environment": {
+          "Variables": {
+            "WALLET_TABLE": {
+              "Ref": "WalletsWalletDetail49B35DC5"
+            }
+          }
+        },
+        "FunctionName": "WalletGet"
+      },
+      "DependsOn": [
+        "WalletsWalletGetHandlerServiceRoleDefaultPolicy35B1E957",
+        "WalletsWalletGetHandlerServiceRole0696B6D6"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletGetHandler/Resource",
+        "aws:asset:path": "asset.8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f",
+        "aws:asset:property": "Code"
+      }
+    },
+    "WalletsWalletUpdateHandlerServiceRoleC563B08D": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletUpdateHandler/ServiceRole/Resource"
+      }
+    },
+    "WalletsWalletUpdateHandlerServiceRoleDefaultPolicy4E4AEBCF": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "dynamodb:BatchWriteItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "WalletsWalletDetail49B35DC5",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "WalletsWalletUpdateHandlerServiceRoleDefaultPolicy4E4AEBCF",
+        "Roles": [
+          {
+            "Ref": "WalletsWalletUpdateHandlerServiceRoleC563B08D"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletUpdateHandler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "WalletsWalletUpdateHandlerEE9E7AE3": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3BucketFDDD5190"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "update.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "WalletsWalletUpdateHandlerServiceRoleC563B08D",
+            "Arn"
+          ]
+        },
+        "Runtime": "python3.7",
+        "Environment": {
+          "Variables": {
+            "WALLET_TABLE": {
+              "Ref": "WalletsWalletDetail49B35DC5"
+            }
+          }
+        },
+        "FunctionName": "WalletUpdate"
+      },
+      "DependsOn": [
+        "WalletsWalletUpdateHandlerServiceRoleDefaultPolicy4E4AEBCF",
+        "WalletsWalletUpdateHandlerServiceRoleC563B08D"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletUpdateHandler/Resource",
+        "aws:asset:path": "asset.8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f",
+        "aws:asset:property": "Code"
+      }
+    },
+    "WalletsWalletDeleteHandlerServiceRole93F27488": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletDeleteHandler/ServiceRole/Resource"
+      }
+    },
+    "WalletsWalletDeleteHandlerServiceRoleDefaultPolicy4B9E2AC6": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "dynamodb:BatchWriteItem",
+                "dynamodb:PutItem",
+                "dynamodb:UpdateItem",
+                "dynamodb:DeleteItem"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "WalletsWalletDetail49B35DC5",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Ref": "AWS::NoValue"
+                }
+              ]
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "WalletsWalletDeleteHandlerServiceRoleDefaultPolicy4B9E2AC6",
+        "Roles": [
+          {
+            "Ref": "WalletsWalletDeleteHandlerServiceRole93F27488"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletDeleteHandler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "WalletsWalletDeleteHandler71F9F151": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3BucketFDDD5190"
+          },
+          "S3Key": {
+            "Fn::Join": [
+              "",
+              [
+                {
+                  "Fn::Select": [
+                    0,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "Fn::Select": [
+                    1,
+                    {
+                      "Fn::Split": [
+                        "||",
+                        {
+                          "Ref": "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            ]
+          }
+        },
+        "Handler": "delete.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "WalletsWalletDeleteHandlerServiceRole93F27488",
+            "Arn"
+          ]
+        },
+        "Runtime": "python3.7",
+        "Environment": {
+          "Variables": {
+            "WALLET_TABLE": {
+              "Ref": "WalletsWalletDetail49B35DC5"
+            }
+          }
+        },
+        "FunctionName": "WalletDelete"
+      },
+      "DependsOn": [
+        "WalletsWalletDeleteHandlerServiceRoleDefaultPolicy4B9E2AC6",
+        "WalletsWalletDeleteHandlerServiceRole93F27488"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/WalletDeleteHandler/Resource",
+        "aws:asset:path": "asset.8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f",
+        "aws:asset:property": "Code"
+      }
+    },
+    "WalletsWalletapi9B0A44F0": {
+      "Type": "AWS::ApiGateway::RestApi",
+      "Properties": {
+        "Description": "This service serves Wallets.",
+        "Name": "Wallet Service"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Resource"
+      }
+    },
+    "WalletsWalletapiDeployment5C6C0D13129cd5b824a3c27aa8a6412b959e9756": {
+      "Type": "AWS::ApiGateway::Deployment",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "WalletsWalletapi9B0A44F0"
+        },
+        "Description": "Automatically created by the RestApi construct"
+      },
+      "DependsOn": [
+        "WalletsWalletapiidDELETE91301A3B",
+        "WalletsWalletapiidGET2E670260",
+        "WalletsWalletapiidPUTBEC9CD7C",
+        "WalletsWalletapiid9AC81475",
+        "WalletsWalletapiPOST3A564174"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Deployment/Resource"
+      }
+    },
+    "WalletsWalletapiDeploymentStageprodF0E10B5B": {
+      "Type": "AWS::ApiGateway::Stage",
+      "Properties": {
+        "RestApiId": {
+          "Ref": "WalletsWalletapi9B0A44F0"
+        },
+        "DeploymentId": {
+          "Ref": "WalletsWalletapiDeployment5C6C0D13129cd5b824a3c27aa8a6412b959e9756"
+        },
+        "StageName": "prod"
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/DeploymentStage.prod/Resource"
+      }
+    },
+    "WalletsWalletapiCloudWatchRole04F625A5": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "apigateway.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AmazonAPIGatewayPushToCloudWatchLogs"
+              ]
+            ]
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/CloudWatchRole/Resource"
+      }
+    },
+    "WalletsWalletapiAccountB7B5610C": {
+      "Type": "AWS::ApiGateway::Account",
+      "Properties": {
+        "CloudWatchRoleArn": {
+          "Fn::GetAtt": [
+            "WalletsWalletapiCloudWatchRole04F625A5",
+            "Arn"
+          ]
+        }
+      },
+      "DependsOn": [
+        "WalletsWalletapi9B0A44F0"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Account"
+      }
+    },
+    "WalletsWalletapiPOSTApiPermissionmywalletWalletsWalletapi7B2B67C5POSTBDC9CD82": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "WalletsTrxCreateHandler5E56B295",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "WalletsWalletapi9B0A44F0"
+              },
+              "/",
+              {
+                "Ref": "WalletsWalletapiDeploymentStageprodF0E10B5B"
+              },
+              "/POST/"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/POST/ApiPermission.mywalletWalletsWalletapi7B2B67C5.POST.."
+      }
+    },
+    "WalletsWalletapiPOSTApiPermissionTestmywalletWalletsWalletapi7B2B67C5POSTCBFEDA00": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "WalletsTrxCreateHandler5E56B295",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "WalletsWalletapi9B0A44F0"
+              },
+              "/test-invoke-stage/POST/"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/POST/ApiPermission.Test.mywalletWalletsWalletapi7B2B67C5.POST.."
+      }
+    },
+    "WalletsWalletapiPOST3A564174": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "POST",
+        "ResourceId": {
+          "Fn::GetAtt": [
+            "WalletsWalletapi9B0A44F0",
+            "RootResourceId"
+          ]
+        },
+        "RestApiId": {
+          "Ref": "WalletsWalletapi9B0A44F0"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "RequestTemplates": {
+            "application/json": "{ \"statusCode\": \"200\" }"
+          },
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "WalletsTrxCreateHandler5E56B295",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/POST/Resource"
+      }
+    },
+    "WalletsWalletapiid9AC81475": {
+      "Type": "AWS::ApiGateway::Resource",
+      "Properties": {
+        "ParentId": {
+          "Fn::GetAtt": [
+            "WalletsWalletapi9B0A44F0",
+            "RootResourceId"
+          ]
+        },
+        "PathPart": "{id}",
+        "RestApiId": {
+          "Ref": "WalletsWalletapi9B0A44F0"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/{id}/Resource"
+      }
+    },
+    "WalletsWalletapiidPUTApiPermissionmywalletWalletsWalletapi7B2B67C5PUTid3166B0DA": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "WalletsWalletUpdateHandlerEE9E7AE3",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "WalletsWalletapi9B0A44F0"
+              },
+              "/",
+              {
+                "Ref": "WalletsWalletapiDeploymentStageprodF0E10B5B"
+              },
+              "/PUT/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/{id}/PUT/ApiPermission.mywalletWalletsWalletapi7B2B67C5.PUT..{id}"
+      }
+    },
+    "WalletsWalletapiidPUTApiPermissionTestmywalletWalletsWalletapi7B2B67C5PUTidA18D5ED4": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "WalletsWalletUpdateHandlerEE9E7AE3",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "WalletsWalletapi9B0A44F0"
+              },
+              "/test-invoke-stage/PUT/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/{id}/PUT/ApiPermission.Test.mywalletWalletsWalletapi7B2B67C5.PUT..{id}"
+      }
+    },
+    "WalletsWalletapiidPUTBEC9CD7C": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "PUT",
+        "ResourceId": {
+          "Ref": "WalletsWalletapiid9AC81475"
+        },
+        "RestApiId": {
+          "Ref": "WalletsWalletapi9B0A44F0"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "RequestTemplates": {
+            "application/json": "{ \"statusCode\": \"200\" }"
+          },
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "WalletsWalletUpdateHandlerEE9E7AE3",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/{id}/PUT/Resource"
+      }
+    },
+    "WalletsWalletapiidGETApiPermissionmywalletWalletsWalletapi7B2B67C5GETidD27DDA5E": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "WalletsWalletGetHandler196D89A7",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "WalletsWalletapi9B0A44F0"
+              },
+              "/",
+              {
+                "Ref": "WalletsWalletapiDeploymentStageprodF0E10B5B"
+              },
+              "/GET/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/{id}/GET/ApiPermission.mywalletWalletsWalletapi7B2B67C5.GET..{id}"
+      }
+    },
+    "WalletsWalletapiidGETApiPermissionTestmywalletWalletsWalletapi7B2B67C5GETidB4B4B5D0": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "WalletsWalletGetHandler196D89A7",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "WalletsWalletapi9B0A44F0"
+              },
+              "/test-invoke-stage/GET/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/{id}/GET/ApiPermission.Test.mywalletWalletsWalletapi7B2B67C5.GET..{id}"
+      }
+    },
+    "WalletsWalletapiidGET2E670260": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "GET",
+        "ResourceId": {
+          "Ref": "WalletsWalletapiid9AC81475"
+        },
+        "RestApiId": {
+          "Ref": "WalletsWalletapi9B0A44F0"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "RequestTemplates": {
+            "application/json": "{ \"statusCode\": \"200\" }"
+          },
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "WalletsWalletGetHandler196D89A7",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/{id}/GET/Resource"
+      }
+    },
+    "WalletsWalletapiidDELETEApiPermissionmywalletWalletsWalletapi7B2B67C5DELETEid96940476": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "WalletsWalletDeleteHandler71F9F151",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "WalletsWalletapi9B0A44F0"
+              },
+              "/",
+              {
+                "Ref": "WalletsWalletapiDeploymentStageprodF0E10B5B"
+              },
+              "/DELETE/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/{id}/DELETE/ApiPermission.mywalletWalletsWalletapi7B2B67C5.DELETE..{id}"
+      }
+    },
+    "WalletsWalletapiidDELETEApiPermissionTestmywalletWalletsWalletapi7B2B67C5DELETEidFA37B4E6": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "Action": "lambda:InvokeFunction",
+        "FunctionName": {
+          "Fn::GetAtt": [
+            "WalletsWalletDeleteHandler71F9F151",
+            "Arn"
+          ]
+        },
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:",
+              {
+                "Ref": "AWS::Partition"
+              },
+              ":execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "WalletsWalletapi9B0A44F0"
+              },
+              "/test-invoke-stage/DELETE/{id}"
+            ]
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/{id}/DELETE/ApiPermission.Test.mywalletWalletsWalletapi7B2B67C5.DELETE..{id}"
+      }
+    },
+    "WalletsWalletapiidDELETE91301A3B": {
+      "Type": "AWS::ApiGateway::Method",
+      "Properties": {
+        "HttpMethod": "DELETE",
+        "ResourceId": {
+          "Ref": "WalletsWalletapiid9AC81475"
+        },
+        "RestApiId": {
+          "Ref": "WalletsWalletapi9B0A44F0"
+        },
+        "AuthorizationType": "NONE",
+        "Integration": {
+          "IntegrationHttpMethod": "POST",
+          "RequestTemplates": {
+            "application/json": "{ \"statusCode\": \"200\" }"
+          },
+          "Type": "AWS_PROXY",
+          "Uri": {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":apigateway:",
+                {
+                  "Ref": "AWS::Region"
+                },
+                ":lambda:path/2015-03-31/functions/",
+                {
+                  "Fn::GetAtt": [
+                    "WalletsWalletDeleteHandler71F9F151",
+                    "Arn"
+                  ]
+                },
+                "/invocations"
+              ]
+            ]
+          }
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "my-wallet/Wallets/Wallet-api/Default/{id}/DELETE/Resource"
+      }
+    }
+  },
+  "Outputs": {
+    "WalletsWalletapiEndpoint07DF842B": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "WalletsWalletapi9B0A44F0"
+            },
+            ".execute-api.",
+            {
+              "Ref": "AWS::Region"
+            },
+            ".",
+            {
+              "Ref": "AWS::URLSuffix"
+            },
+            "/",
+            {
+              "Ref": "WalletsWalletapiDeploymentStageprodF0E10B5B"
+            },
+            "/"
+          ]
+        ]
+      }
+    }
+  },
+  "Parameters": {
+    "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3BucketFDDD5190": {
+      "Type": "String",
+      "Description": "S3 bucket for asset \"8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f\""
+    },
+    "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fS3VersionKey65D1B1E1": {
+      "Type": "String",
+      "Description": "S3 key for asset version \"8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f\""
+    },
+    "AssetParameters8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6fArtifactHash6360666E": {
+      "Type": "String",
+      "Description": "Artifact hash for asset \"8836d41729eaf5fbfbc95f8c8de81a350eb10056215ad946f1c9d0c9e5224b6f\""
+    }
+  }
+}

@@ -1,0 +1,7 @@
+README.md
+setup.py
+my_wallet/my_wallet.egg-info/PKG-INFO
+my_wallet/my_wallet.egg-info/SOURCES.txt
+my_wallet/my_wallet.egg-info/dependency_links.txt
+my_wallet/my_wallet.egg-info/requires.txt
+my_wallet/my_wallet.egg-info/top_level.txt
